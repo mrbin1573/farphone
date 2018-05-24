@@ -21,12 +21,14 @@ body,html{
     height: 500px;
     border-radius: 50%;
     background: radial-gradient(#000, rgb(7, 7, 7), rgb(0, 0, 0));
-    box-shadow: 0 0 150px rgba(99, 154, 216, 0.637);
     border:1px solid rgba(99, 154, 216, 0.575);
+    border:1px solid rgba(255, 255, 255, 0.3);
+    animation: colorChange 5s linear infinite;
     cursor: pointer;
     transition: 1s;
     transform-style: preserve-3d; 
     .front,.back{
+      transform: translateX(45deg);
       backface-visibility: hidden;
       position: absolute;
       width: 100%;
@@ -35,6 +37,11 @@ body,html{
       top: 0;
       left: 0;
       transform-style: preserve-3d; 
+      .txt{
+        // >span{
+          text-shadow: 0 0 100px rgba(49, 215, 221, 0.548);
+        // }
+      }
       .back-img{
         backface-visibility: hidden;
         position: absolute;
@@ -43,8 +50,8 @@ body,html{
         height: 100%;
         top: 0;
         left: 0;
-        transform: translateZ(120px);
         &.small{
+          transform: translateZ(120px);
           opacity: .2; 
           transform-style: preserve-3d; 
           background: url('/static/img/bg1.png');
@@ -76,11 +83,9 @@ body,html{
           .phone-nameCN{
             font-size: 50px;
             font-weight: bold;
-            text-shadow: 0 0 100px rgba(99, 154, 216, 0.753);
           }
           .line{
             display: inline-block;
-            text-shadow: 0 0 50px rgba(99, 154, 216, 0.753);
             height: 1px;
             margin: 15px 0;
             width: 80%;
@@ -88,7 +93,6 @@ body,html{
           }
           .phone-slogan{
             font-size: 24px;
-            text-shadow: 0 0 50px rgba(99, 154, 216, 0.753);
           }
         }
       }
@@ -107,13 +111,15 @@ body,html{
           .qidai{
             font-size: 50px;
             font-weight: bold;
-            text-shadow: 0 0 100px rgba(99, 154, 216, 0.753);
           }
         }
       }
     }
     &:hover{
       transform: rotateX(180deg);
+    }
+    &:active{
+      transform: scale(.55);
     }
   }
 }
@@ -131,6 +137,23 @@ body,html{
   }
   to{
     transform: rotate(0deg);
+  }
+}
+@keyframes colorChange{
+  0%{
+    box-shadow: 0 0 200px rgba(78, 255, 151, 0.25);
+  }
+  25%{
+    box-shadow: 0 0 200px rgba(255, 82, 183, 0.25);
+  }
+  50%{
+    box-shadow: 0 0 200px rgba(79, 255, 167, 0.25);
+  }
+  75%{
+    box-shadow: 0 0 200px rgba(156, 81, 255, 0.25);
+  }
+  100%{
+    box-shadow: 0 0 200px rgba(93, 255, 161, 0.25);
   }
 }
 @media(max-width:510px){
