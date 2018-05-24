@@ -51,7 +51,7 @@ html {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  transform: translateZ(-100px);
+  transform: translateZ(-120px);
 }
 .box .center .front.front .txt .phone-nameCN,
 .box .center .back.front .txt .phone-nameCN {
@@ -70,7 +70,7 @@ html {
 }
 .box .center .front.front .txt .phone-slogan,
 .box .center .back.front .txt .phone-slogan {
-  font-size: 20px;
+  font-size: 24px;
   text-shadow: 0 0 50px rgba(99, 154, 216, 0.753);
 }
 .box .center .front.front .back-img,
