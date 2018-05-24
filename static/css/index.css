@@ -23,7 +23,7 @@ html {
   border-radius: 50%;
   background: radial-gradient(#000, #070707, #000000);
   box-shadow: 0 0 100px rgba(99, 154, 216, 0.253);
-  border: 1px solid rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.295);
   cursor: pointer;
   transition: 2s;
   transform-style: preserve-3d;
@@ -86,7 +86,7 @@ html {
   background-position: 50% 50%;
   background-repeat: no-repeat;
   animation: rotate 5s linear infinite;
-  opacity: .1;
+  opacity: .3;
 }
 .box .center .front.back,
 .box .center .back.back {
