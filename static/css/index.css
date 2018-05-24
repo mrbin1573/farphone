@@ -22,8 +22,8 @@ html {
   height: 500px;
   border-radius: 50%;
   background: radial-gradient(#000, #070707, #000000);
-  box-shadow: 0 0 100px rgba(99, 154, 216, 0.253);
-  border: 1px solid rgba(255, 255, 255, 0.295);
+  box-shadow: 0 0 150px rgba(99, 154, 216, 0.637);
+  border: 1px solid rgba(99, 154, 216, 0.575);
   cursor: pointer;
   transition: 2s;
   transform-style: preserve-3d;
