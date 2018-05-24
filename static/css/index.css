@@ -15,6 +15,7 @@ html {
   justify-content: center;
   align-items: center;
   overflow: hidden;
+  user-select: none;
 }
 .box .center {
   position: relative;
@@ -42,23 +43,32 @@ html {
 .box .center .front .back-img,
 .box .center .back .back-img {
   backface-visibility: hidden;
-  transform-style: preserve-3d;
   position: absolute;
   width: 100%;
   border-radius: 50%;
   height: 100%;
   top: 0;
   left: 0;
-  background: url('/static/img/bg1.png');
-  background-size: 90% 90%;
-  background-position: 50% 50%;
-  background-repeat: no-repeat;
-  animation: rotate 5s linear infinite;
-  opacity: .3;
+  transform: translateZ(120px);
 }
-.box .center .front.front .back-img,
-.box .center .back.front .back-img {
-  transform: translateZ(80);
+.box .center .front .back-img.small,
+.box .center .back .back-img.small {
+  opacity: .2;
+  transform-style: preserve-3d;
+  background: url('/static/img/bg1.png');
+  background-size: 40% 40%;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  animation: rotate 5s linear infinite;
+}
+.box .center .front .back-img.big,
+.box .center .back .back-img.big {
+  opacity: .3;
+  background: url('/static/img/bg2.png');
+  background-size: 90% 90%;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  animation: rotateReverse 3s linear infinite;
 }
 .box .center .front.front .txt,
 .box .center .back.front .txt {
@@ -123,5 +133,23 @@ html {
   }
   to {
     transform: rotate(360deg);
+  }
+}
+@keyframes rotateReverse {
+  from {
+    transform: rotate(360deg);
+  }
+  to {
+    transform: rotate(0deg);
+  }
+}
+@media (max-width: 510px) {
+  .box .center {
+    width: 300px;
+    height: 300px;
+    border: 1px solid rgba(99, 154, 216, 0.329);
+  }
+  .box .center .front .txt .phone-slogan {
+    font-size: 16px !important;
   }
 }
