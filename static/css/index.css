@@ -25,21 +25,40 @@ html {
   box-shadow: 0 0 150px rgba(99, 154, 216, 0.637);
   border: 1px solid rgba(99, 154, 216, 0.575);
   cursor: pointer;
-  transition: 2s;
+  transition: 1s;
   transform-style: preserve-3d;
 }
 .box .center .front,
 .box .center .back {
+  backface-visibility: hidden;
   position: absolute;
   width: 100%;
   border-radius: 50%;
   height: 100%;
   top: 0;
   left: 0;
+  transform-style: preserve-3d;
 }
-.box .center .front.front,
-.box .center .back.front {
+.box .center .front .back-img,
+.box .center .back .back-img {
   backface-visibility: hidden;
+  transform-style: preserve-3d;
+  position: absolute;
+  width: 100%;
+  border-radius: 50%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: url('/static/img/bg1.png');
+  background-size: 90% 90%;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  animation: rotate 5s linear infinite;
+  opacity: .3;
+}
+.box .center .front.front .back-img,
+.box .center .back.front .back-img {
+  transform: translateZ(80);
 }
 .box .center .front.front .txt,
 .box .center .back.front .txt {
@@ -51,7 +70,7 @@ html {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  transform: translateZ(-120px);
+  transform: translateZ(120px);
 }
 .box .center .front.front .txt .phone-nameCN,
 .box .center .back.front .txt .phone-nameCN {
@@ -73,30 +92,13 @@ html {
   font-size: 24px;
   text-shadow: 0 0 50px rgba(99, 154, 216, 0.753);
 }
-.box .center .front.front .back-img,
-.box .center .back.front .back-img {
-  position: absolute;
-  width: 100%;
-  border-radius: 50%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  background: url('/static/img/bg1.png');
-  background-size: 90% 90%;
-  background-position: 50% 50%;
-  background-repeat: no-repeat;
-  animation: rotate 5s linear infinite;
-  opacity: .3;
-}
 .box .center .front.back,
 .box .center .back.back {
-  transform: rotateY(180deg);
+  transform: rotateX(180deg);
   transition: 0s;
-  backface-visibility: hidden;
 }
 .box .center .front.back .txt,
 .box .center .back.back .txt {
-  backface-visibility: hidden;
   width: 100%;
   height: 100%;
   color: #fff;
@@ -113,7 +115,7 @@ html {
   text-shadow: 0 0 100px rgba(99, 154, 216, 0.753);
 }
 .box .center:hover {
-  transform: rotateY(180deg);
+  transform: rotateX(180deg);
 }
 @keyframes rotate {
   from {
