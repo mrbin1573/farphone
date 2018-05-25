@@ -46,9 +46,32 @@ html {
 .box .center .back .txt {
   text-shadow: 0 0 100px rgba(49, 215, 221, 0.548);
 }
+.box .center .front .bg-imgBox-big,
+.box .center .back .bg-imgBox-big {
+  transform-style: preserve-3d;
+  transform: translateZ(60px);
+  backface-visibility: hidden;
+  position: absolute;
+  width: 100%;
+  border-radius: 50%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+.box .center .front .bg-imgBox-small,
+.box .center .back .bg-imgBox-small {
+  transform-style: preserve-3d;
+  transform: translateZ(50px);
+  backface-visibility: hidden;
+  position: absolute;
+  width: 100%;
+  border-radius: 50%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
 .box .center .front .back-img,
 .box .center .back .back-img {
-  backface-visibility: hidden;
   position: absolute;
   width: 100%;
   border-radius: 50%;
@@ -58,7 +81,6 @@ html {
 }
 .box .center .front .back-img.small,
 .box .center .back .back-img.small {
-  transform: translateZ(120px);
   opacity: .2;
   transform-style: preserve-3d;
   background: url('/static/img/bg1.png');
@@ -74,7 +96,7 @@ html {
   background-size: 90% 90%;
   background-repeat: no-repeat;
   background-position: 50% 50%;
-  animation: rotateReverse 3s linear infinite;
+  animation: rotateReverse 8s linear infinite;
 }
 .box .center .front.front .txt,
 .box .center .back.front .txt {
@@ -90,6 +112,9 @@ html {
 }
 .box .center .front.front .txt .phone-nameCN,
 .box .center .back.front .txt .phone-nameCN {
+  display: flex;
+  align-items: flex-end;
+  height: 70px;
   font-size: 50px;
   font-weight: bold;
 }
@@ -98,11 +123,13 @@ html {
   display: inline-block;
   height: 1px;
   margin: 15px 0;
-  width: 80%;
+  width: 90%;
   background: #fff;
 }
 .box .center .front.front .txt .phone-slogan,
 .box .center .back.front .txt .phone-slogan {
+  display: inline-block;
+  height: 70px;
   font-size: 24px;
 }
 .box .center .front.back,
@@ -128,9 +155,6 @@ html {
 }
 .box .center:hover {
   transform: rotateX(180deg);
-}
-.box .center:active {
-  transform: scale(0.55);
 }
 @keyframes rotate {
   from {
@@ -170,6 +194,9 @@ html {
     width: 300px;
     height: 300px;
     border: 1px solid rgba(99, 154, 216, 0.329);
+  }
+  .box .center .front .txt .phone-nameCN {
+    font-size: 40px !important;
   }
   .box .center .front .txt .phone-slogan {
     font-size: 16px !important;
